@@ -1,0 +1,37 @@
+@import "variables.scss";
+
+:root {
+  /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+  /*font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1200 - 300)));*/
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

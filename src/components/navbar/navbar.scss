@@ -1,0 +1,75 @@
+@import "../../variables";
+
+.container {
+  position: fixed;
+  top: 0;
+  z-index: 98;
+  height: 70px;
+  width: 100%;
+  color: $light-mode-foreground;
+  transition: all ease-in-out .5s;
+
+  &.dark {
+    color: $dark-mode-foreground;
+  }
+
+  &.shadow-dark {
+    background-color: $dark-mode-background;
+    box-shadow: 0 0 15px 5px #000;
+  }
+
+  &.shadow-bright {
+    background-color: $light-mode-background;
+    box-shadow: 0 0 15px 5px #000;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    .name {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+
+      position: relative;
+
+      .link {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        margin-right: 1rem
+      }
+
+      .link:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $green;
+        transform-origin: bottom;
+        transition: transform 0.15s ease-out;
+      }
+
+      .link:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom;
+      }
+    }
+  }
+
+}
+

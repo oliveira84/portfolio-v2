@@ -1,0 +1,122 @@
+@import "../../variables";
+
+.projects-container {
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: $light-mode-background;
+  color: $light-mode-foreground;
+  transition: all ease-in-out .5s;
+  position: relative;
+  overflow: hidden;
+
+
+  &.dark {
+    background: $dark-mode-background;
+    color: $dark-mode-foreground;
+  }
+
+  .wrapper {
+    max-width: $max-width;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .title {
+      text-align: center;
+      font-size: 4rem;
+    }
+
+    .slider {
+      position: absolute;
+      height: 60%;
+      display: flex;
+      transition: all 0.75s ease-out;
+
+      .item-wrapper {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        .left {
+          padding: 1rem;
+          text-align: center;
+          width: 600px;
+          flex-shrink: 1;
+
+          img {
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 5px 1px #000;
+          }
+        }
+
+        .right {
+          padding: 1rem;
+          width: 600px;
+          flex-shrink: 1;
+          text-align: left;
+
+          h2 {
+            font-size: 2.5rem;
+          }
+
+          p {
+            font-size: 1.5rem;
+          }
+
+          a {
+            text-decoration: inherit;
+            color: inherit;
+            display: inline-block;
+            padding: 1rem 1rem 0 0;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              transform: translateY(-3px);
+              color: $green;
+            }
+
+            .icon {
+              font-size: 2rem;
+            }
+          }
+
+        }
+      }
+    }
+
+    .slider-control {
+      padding-top: 4rem;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      height: 40%;
+      bottom: 0;
+      display: flex;
+      align-items: flex-start;
+      align-content: center;
+      justify-content: center;
+
+      .chevron {
+        cursor: pointer;
+        font-size: 50px;
+      }
+
+      .circle {
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin: 15px 5px;
+        border: 1px solid $green;
+        border-radius: 1rem;
+
+        &.selected {
+          background-color: $green;
+        }
+      }
+    }
+  }
+}

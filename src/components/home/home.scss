@@ -1,0 +1,138 @@
+@import "../../variables";
+
+.home-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $light-mode-background;
+  color: $light-mode-foreground;
+  transition: all ease-in-out .5s;
+  overflow: hidden;
+
+  &.dark {
+    background: $dark-mode-background;
+    color: $dark-mode-foreground;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    p {
+      font-size: 1.8rem;
+      animation: slide-in-right 1s ease-out;
+    }
+
+    h2 {
+      font-size: 4rem;
+      animation: slide-in-right 1s ease-out;
+    }
+
+    .glitch {
+      position: relative;
+      font-size: 8rem;
+      animation: glitch 5s 5s infinite, slide-in-left 1s ease-out;
+      padding-right: 5px;
+
+
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        left: -2px;
+        text-shadow: -4px 0 $magenta;
+        background: transparent;
+        overflow: hidden;
+        top: 0;
+        animation: noise-1 5s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+      }
+
+      &::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 2px;
+        text-shadow: -4px 0 $green;
+        background: transparent;
+        overflow: hidden;
+        top: 0;
+        animation: noise-2 4s linear infinite alternate-reverse, glitch 5s 5s infinite;
+
+      }
+
+    }
+
+    .scanlines {
+      overflow: hidden;
+      mix-blend-mode: difference;
+    }
+
+    .scanlines::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+      background: repeating-linear-gradient(
+                      to bottom,
+                      transparent 0%,
+                      rgba(255, 255, 255, 0.04) .5%,
+                      transparent 1%
+      );
+      animation: fudge 7s ease-in-out alternate infinite;
+    }
+
+  }
+}
+
+@keyframes glitch {
+  1% {
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2% {
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+@keyframes noise-1 {
+  $steps: 30;
+  @for $i from 1 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}
+
+@keyframes glitch-2 {
+  1% {
+    transform: rotateX(10deg) skewX(70deg);
+  }
+  2% {
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
+
+@keyframes fudge {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, 2%);
+  }
+}
+
+@keyframes noise-2 {
+  $steps: 30;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+    }
+  }
+}

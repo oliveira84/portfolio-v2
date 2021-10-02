@@ -1,0 +1,107 @@
+@import "../../variables";
+
+.about-container {
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: $light-mode-background;
+  color: $light-mode-foreground;
+  transition: all ease-in-out .5s;
+
+
+  &.dark {
+    background: $dark-mode-background;
+    color: $dark-mode-foreground;
+  }
+
+  .wrapper {
+    overflow: hidden;
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 80vh;
+
+      li {
+        list-style: none;
+      }
+    }
+
+    .left {
+      flex: 1;
+      padding: 1rem;
+      text-align: right;
+
+      h3 {
+        font-size: 3rem;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        margin-right: 1rem;
+        opacity: 50%;
+
+        &.selected {
+          opacity: 100%;
+        }
+      }
+
+      h3:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $green;
+        transform-origin: bottom;
+        transition: transform 0.15s ease-out;
+      }
+
+      h3:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom;
+      }
+    }
+
+    .separator {
+      width: 2px;
+      height: 400px;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, $green 51%, rgba(0, 0, 0, 0) 100%);
+      animation: grow-vertically ease-out 0.2s;
+    }
+
+    @keyframes grow-vertically {
+      0% {
+        transform: scaleY(0.4);
+      }
+      100% {
+        transform: scaleY(1);
+      }
+    }
+
+    .right {
+      flex: 6;
+
+      p {
+        font-size: 2rem;
+        padding-left: 2rem;
+        animation: slide-in-right 0.75s ease-out;
+      }
+
+      .since {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: slide-in-right 0.75s ease-out;
+      }
+    }
+  }
+}
