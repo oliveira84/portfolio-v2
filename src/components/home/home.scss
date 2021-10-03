@@ -24,7 +24,7 @@
 
     p {
       font-size: 2rem;
-      animation: slide-in-right 1s ease-out;
+      animation: slide-in-right 0.5s ease-out;
 
       @media (max-width: 900px) {
         font-size: 1.2rem;
@@ -33,7 +33,7 @@
 
     h2 {
       font-size: 4rem;
-      animation: slide-in-right 1s ease-out;
+      animation: slide-in-right 0.5s ease-out;
 
       @media (max-width: 1100px) {
         font-size: 3rem;
@@ -46,7 +46,7 @@
     .glitch {
       position: relative;
       font-size: 8rem;
-      animation: glitch 5s 5s infinite, slide-in-left 1s ease-out;
+      animation: glitch 5s 5s infinite, slide-in-left 0.5s ease-out;
       padding-right: 5px;
       white-space: nowrap;
 
