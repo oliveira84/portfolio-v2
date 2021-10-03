@@ -13,10 +13,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 2px;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, transform 0.2s ease-in-out;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, transform 0.2s ease-in-out, border 0.2s ease-in-out;
 
   &:hover {
-    transform: translateY(-3px);
+    border: 1px solid $green;
     color: $green;
   }
 

@@ -3,12 +3,12 @@
 .contact-container {
   width: 100%;
   height: calc(100vh - 70px);
-  background: $light-mode-background2;
+  background: $light-mode-background;
   color: $light-mode-foreground;
   transition: all ease-in-out .5s;
 
   &.dark {
-    background: $dark-mode-background2;
+    background: $dark-mode-background;
     color: $dark-mode-foreground;
   }
 

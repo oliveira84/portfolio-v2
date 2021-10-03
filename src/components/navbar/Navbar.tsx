@@ -2,6 +2,8 @@ import React, {useContext, useEffect, useState} from 'react';
 import "./navbar.scss";
 import Switch from "../switch/Switch";
 import {ThemeContext} from "../../context";
+import {Link} from "react-router-dom"
+import {HashLink} from "react-router-hash-link"
 
 const Navbar = () => {
 	const {isDark} = useContext(ThemeContext);
@@ -23,12 +25,11 @@ const Navbar = () => {
 		<div className={`container ${isDark && "dark"} ${(shadow && isDark) ? "shadow-dark" : shadow && "shadow-bright"}`}>
 			<div className={"wrapper"}>
 				<ul className={"menu"}>
-					<li className={"link"}><a href="#home">home</a></li>
-					<li className={"link"}><a href="#about">about</a></li>
-					<li className={"link"}><a href="#projects">projects</a></li>
-					<li className={"link"}>contact</li>
+					<li className={"link"}><HashLink to="/#home">home</HashLink></li>
+					<li className={"link"}><HashLink to="/#about">about</HashLink></li>
+					<li className={"link"}><HashLink to="/#projects">projects</HashLink></li>
+					<li className={"link"}><Link to="/contact">contact</Link></li>
 					<li><Switch/></li>
-
 				</ul>
 			</div>
 		</div>

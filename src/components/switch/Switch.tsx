@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import "./switch.scss"
-
 import {Brightness2, Brightness5} from "@material-ui/icons";
 import {ThemeContext} from "../../context";
 
