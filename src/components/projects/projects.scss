@@ -6,7 +6,7 @@
   background: $light-mode-background;
   color: $light-mode-foreground;
   transition: all ease-in-out .5s;
-  position: relative;
+
   overflow: hidden;
 
 
@@ -16,74 +16,103 @@
   }
 
   .wrapper {
-    max-width: $max-width;
     height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .title {
+      padding-bottom: 3rem;
       text-align: center;
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
-    .slider {
-      position: absolute;
-      height: 60%;
-      display: flex;
-      transition: all 0.75s ease-out;
+    .items-wrapper {
+      max-width: $max-width;
+      margin: 0 auto;
+      overflow: hidden;
+      height: 50%;
+      @media (max-width: 1000px) {
+        height: 40%;
+      }
+      @media (max-width: 768px) {
+        height: 35%;
+      }
 
-      .item-wrapper {
-        width: 100vw;
+
+      .slider {
+        position: absolute;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
+        transition: all 0.75s ease-out;
 
-        .left {
+        .item-wrapper {
+          width: 100vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           padding: 1rem;
-          text-align: center;
-          width: 600px;
-          flex-shrink: 1;
 
-          img {
-            width: 100%;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 0 5px 1px #000;
-          }
-        }
+          .left {
+            padding: 1rem;
+            text-align: center;
+            width: 600px;
+            flex-shrink: 1;
 
-        .right {
-          padding: 1rem;
-          width: 600px;
-          flex-shrink: 1;
-          text-align: left;
-
-          h2 {
-            font-size: 2.5rem;
-          }
-
-          p {
-            font-size: 1.5rem;
-          }
-
-          a {
-            text-decoration: inherit;
-            color: inherit;
-            display: inline-block;
-            padding: 1rem 1rem 0 0;
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-              transform: translateY(-3px);
-              color: $green;
-            }
-
-            .icon {
-              font-size: 2rem;
+            img {
+              width: 100%;
+              border-radius: 20px;
+              object-fit: cover;
+              box-shadow: 0 0 5px 1px #000;
             }
           }
 
+          .right {
+            padding: 1rem;
+            width: 600px;
+            flex-shrink: 1;
+            text-align: left;
+
+            h2 {
+              font-size: 2.5rem;
+
+              @media (max-width: 1100px) {
+                font-size: 1.8rem;
+              }
+              @media (max-width: 900px) {
+                font-size: 1.5rem;
+              }
+            }
+
+            p {
+              font-size: 1.5rem;
+
+              @media (max-width: 1100px) {
+                font-size: 1.2rem;
+              }
+              @media (max-width: 900px) {
+                font-size: 1rem;
+              }
+            }
+
+            a {
+              text-decoration: inherit;
+              color: inherit;
+              display: inline-block;
+              padding: 1rem 1rem 0 0;
+              transition: all 0.2s ease-in-out;
+
+              &:hover {
+                transform: translateY(-3px);
+                color: $green;
+              }
+
+              .icon {
+                font-size: 2rem;
+              }
+            }
+
+          }
         }
       }
     }
@@ -91,10 +120,6 @@
     .slider-control {
       padding-top: 4rem;
       width: 100%;
-      position: absolute;
-      left: 0;
-      height: 40%;
-      bottom: 0;
       display: flex;
       align-items: flex-start;
       align-content: center;
@@ -119,4 +144,6 @@
       }
     }
   }
+
+
 }

@@ -46,27 +46,29 @@ const data: Me[] = [
 const About = () => {
 	const [dataId, setDataId] = useState(0)
 	const {isDark} = useContext(ThemeContext);
-	console.log(new Date(data[dataId].startDate))
 	return (
 		<div key={data[dataId].id} className={`about-container  ${isDark && "dark"}`}>
 			<div className="wrapper">
-				<div className="left">
-					<ul>
-						{data.map((item) =>
-							<li
-								key={item.id}
-								onMouseEnter={() => setDataId(item.id)}
-								onClick={() => setDataId(item.id)}>
-								<h3 className={(item.id === dataId) ? "selected" : ""}>{item.title}</h3>
-							</li>)}
-					</ul>
-				</div>
-				<div className="separator"/>
-				<div className="right">
-					{<p>{data[dataId].description}</p>}
-					{data[dataId].startDate &&
-          <div className={"since"}>{<Timer date={new Date(data[dataId].startDate)}
-					                                 description={"since then"}/>}</div>}
+				<h2 className={"title"}>About me</h2>
+				<div className="items-wrapper">
+					<div className="left">
+						<ul>
+							{data.map((item) =>
+								<li
+									key={item.id}
+									onMouseEnter={() => setDataId(item.id)}
+									onClick={() => setDataId(item.id)}>
+									<h3 className={(item.id === dataId) ? "selected" : ""}>{item.title}</h3>
+								</li>)}
+						</ul>
+					</div>
+					<div className="separator"/>
+					<div className="right">
+						{<p>{data[dataId].description}</p>}
+						{data[dataId].startDate &&
+            <div className={"since"}>{<Timer date={new Date(data[dataId].startDate)}
+						                                 description={"since then"}/>}</div>}
+					</div>
 				</div>
 			</div>
 		</div>

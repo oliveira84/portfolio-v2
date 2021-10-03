@@ -25,7 +25,7 @@ const Contact = () => {
 	return (
 		<div className={`contact-container ${isDark && "dark"}`}>
 			<div className="wrapper">
-				<div className="title">
+				<div className="title-wrapper">
 					<div className="icon-wrapper">
 						<Mail className={"icon"}/>
 						<div className="line line1"/>
@@ -33,25 +33,24 @@ const Contact = () => {
 						<div className="line line3"/>
 						<div className="line line4"/>
 					</div>
-					<h2>Contact</h2>
+					<h2 className={"title"}>Contact</h2>
 				</div>
 
-				<div className="right">
-					<div className="wrapper">
-						<form className="contact-form" onSubmit={sendEmail}>
-							<input type="hidden" name="contact_number"/>
-							<label>Name</label>
-							<input type="text" name="user_name"/>
-							<label>Email</label>
-							<input type="email" name="user_email"/>
-							<label>Message</label>
-							<textarea name="message"/>
-							<input className={"button"} type="submit" value="Send"/>
-							<span className={"sent " + (sent && "showSent")}>Thanks for your message.</span>
-							<span className={"error " + (error && "showError")}>Something went wrong, please contact me through oliveiradaniel@outlook.com.</span>
-						</form>
-					</div>
+				<div className="form-wrapper">
+					<form className="contact-form" onSubmit={sendEmail}>
+						<input type="hidden" name="contact_number"/>
+						<label>Name</label>
+						<input type="text" name="user_name"/>
+						<label>Email</label>
+						<input type="email" name="user_email"/>
+						<label>Message</label>
+						<textarea name="message"/>
+						<input className={"button"} type="submit" value="Send"/>
+						<span className={"sent " + (sent && "showSent")}>Thanks for your message.</span>
+						<span className={"error " + (error && "showError")}>Something went wrong, please contact me through oliveiradaniel@outlook.com.</span>
+					</form>
 				</div>
+
 			</div>
 		</div>
 	);

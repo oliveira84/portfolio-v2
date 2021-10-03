@@ -68,20 +68,22 @@ const Projects = () => {
 		<div className={`projects-container  ${isDark && "dark"}`}>
 			<div className="wrapper">
 				<h2 className={"title"}>Projects</h2>
-				<div className={"slider"} style={{left: `calc(${-projectId * 100}vw)`}}>
-					{frontendProjects.map((item) => (
-						<div key={item.id} className="item-wrapper">
-							<div className="left">
-								<img src={item.img} alt=""/>
-							</div>
-							<div className="right">
-								<h2>{item.title}</h2>
-								<p>{item.description}</p>
-								<p>Technologies: {item.technologies}</p>
-								<a href={item.live} target="_blank" rel="noopener noreferrer"><LanguageRounded className={"icon"}/> </a>
-								<a href={item.git} target="_blank" rel="noopener noreferrer"><GitHub className={"icon"}/></a>
-							</div>
-						</div>))}
+				<div className="items-wrapper">
+					<div className={"slider"} style={{left: `calc(${-projectId * 100}vw)`}}>
+						{frontendProjects.map((item) => (
+							<div key={item.id} className="item-wrapper">
+								<div className="left">
+									<img src={item.img} alt=""/>
+								</div>
+								<div className="right">
+									<h2>{item.title}</h2>
+									<p>{item.description}</p>
+									<p>Technologies: {item.technologies}</p>
+									<a href={item.live} target="_blank" rel="noopener noreferrer"><LanguageRounded className={"icon"}/> </a>
+									<a href={item.git} target="_blank" rel="noopener noreferrer"><GitHub className={"icon"}/></a>
+								</div>
+							</div>))}
+					</div>
 				</div>
 				<div className="slider-control">
 					<ChevronLeft

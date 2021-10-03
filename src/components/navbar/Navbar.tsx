@@ -22,9 +22,6 @@ const Navbar = () => {
 	return (
 		<div className={`container ${isDark && "dark"} ${(shadow && isDark) ? "shadow-dark" : shadow && "shadow-bright"}`}>
 			<div className={"wrapper"}>
-				<div className="name">
-					Daniel_Oliveira
-				</div>
 				<ul className={"menu"}>
 					<li className={"link"}>home</li>
 					<li className={"link"}>about</li>
