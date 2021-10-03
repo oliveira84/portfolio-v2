@@ -2,12 +2,13 @@
 
 .footer-wrapper {
   width: 100%;
-  background: $light-mode-background;
+  background: $light-mode-background2;
   color: $light-mode-foreground;
   height: 50px;
+  transition: all ease-in-out .5s;
 
   &.dark {
-    background: $dark-mode-background;
+    background: $dark-mode-background2;
     color: $dark-mode-foreground;
   }
 

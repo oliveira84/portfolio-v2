@@ -28,7 +28,8 @@ const Navbar = () => {
 					<li className={"link"}><HashLink to="/#home">home</HashLink></li>
 					<li className={"link"}><HashLink to="/#about">about</HashLink></li>
 					<li className={"link"}><HashLink to="/#projects">projects</HashLink></li>
-					<li className={"link"}><Link to="/contact">contact</Link></li>
+					<li className={"link contact"}><Link to="/contact"><p>contact</p></Link>
+					</li>
 					<li><Switch/></li>
 				</ul>
 			</div>
