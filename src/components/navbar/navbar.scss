@@ -45,6 +45,11 @@
         cursor: pointer;
         margin-right: 1rem;
         font-size: 1.2rem;
+
+        a {
+          text-decoration: inherit;
+          color: inherit;
+        }
       }
 
       .link:after {

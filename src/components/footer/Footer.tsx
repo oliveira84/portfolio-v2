@@ -10,8 +10,10 @@ const Footer = () => {
 	return (
 		<div className={`footer-wrapper ${isDark && "dark"}`}>
 			<footer>
-				<a href={"https://github.com/oliveira84"} target="_blank" rel="noopener noreferrer"><Facebook className={"icon"}/></a>
-				<a href={"https://github.com/oliveira84"} target="_blank" rel="noopener noreferrer"><LinkedIn className={"icon"}/></a>
+				<a href={"https://www.facebook.com/daniel.oliveira.39948856"} target="_blank"
+				   rel="noopener noreferrer"><Facebook className={"icon"}/></a>
+				<a href={"https://www.linkedin.com/in/daniel-oliveira-7744991a0"} target="_blank"
+				   rel="noopener noreferrer"><LinkedIn className={"icon"}/></a>
 				<a href={"https://github.com/oliveira84"} target="_blank" rel="noopener noreferrer"><GitHub className={"icon"}/></a>
 				<div className="icon">
 					<Switch/>

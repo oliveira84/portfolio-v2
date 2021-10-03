@@ -47,7 +47,7 @@ const About = () => {
 	const [dataId, setDataId] = useState(0)
 	const {isDark} = useContext(ThemeContext);
 	return (
-		<div key={data[dataId].id} className={`about-container  ${isDark && "dark"}`}>
+		<div key={data[dataId].id} className={`about-container  ${isDark && "dark"}`} id={"about"}>
 			<div className="wrapper">
 				<h2 className={"title"}>About me</h2>
 				<div className="items-wrapper">

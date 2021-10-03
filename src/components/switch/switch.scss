@@ -1,6 +1,7 @@
 @import "../../variables.scss";
 
 .switch {
+  cursor: pointer;
   position: relative;
   width: 45px;
   height: 20px;
@@ -12,11 +13,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 2px;
-  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-3px);
+    color: $green;
+  }
 
   &.on {
     background: $dark-mode-background;
     color: $dark-mode-foreground;
+
+    &:hover {
+      color: $green;
+    }
   }
 
   .dark, .bright {
@@ -37,7 +47,6 @@
       left: calc(41px - 1rem);
       background: $dark-mode-foreground;
     }
-
 
   }
 

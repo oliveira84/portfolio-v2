@@ -23,9 +23,9 @@ const Navbar = () => {
 		<div className={`container ${isDark && "dark"} ${(shadow && isDark) ? "shadow-dark" : shadow && "shadow-bright"}`}>
 			<div className={"wrapper"}>
 				<ul className={"menu"}>
-					<li className={"link"}>home</li>
-					<li className={"link"}>about</li>
-					<li className={"link"}>projects</li>
+					<li className={"link"}><a href="#home">home</a></li>
+					<li className={"link"}><a href="#about">about</a></li>
+					<li className={"link"}><a href="#projects">projects</a></li>
 					<li className={"link"}>contact</li>
 					<li><Switch/></li>
 

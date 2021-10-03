@@ -6,9 +6,7 @@
   background: $light-mode-background;
   color: $light-mode-foreground;
   transition: all ease-in-out .5s;
-
   overflow: hidden;
-
 
   &.dark {
     background: $dark-mode-background;
@@ -16,6 +14,7 @@
   }
 
   .wrapper {
+
     height: 100%;
     position: relative;
     display: flex;

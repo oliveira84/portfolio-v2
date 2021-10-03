@@ -65,7 +65,7 @@ const Projects = () => {
 	const [projectId, setProjectId] = useState(0)
 	const {isDark} = useContext(ThemeContext);
 	return (
-		<div className={`projects-container  ${isDark && "dark"}`}>
+		<div className={`projects-container  ${isDark && "dark"}`} id={"projects"}>
 			<div className="wrapper">
 				<h2 className={"title"}>Projects</h2>
 				<div className="items-wrapper">
@@ -79,7 +79,8 @@ const Projects = () => {
 									<h2>{item.title}</h2>
 									<p>{item.description}</p>
 									<p>Technologies: {item.technologies}</p>
-									<a href={item.live} target="_blank" rel="noopener noreferrer"><LanguageRounded className={"icon"}/> </a>
+									<a href={item.live} target="_blank" rel="noopener noreferrer"><LanguageRounded className={"icon"}/>
+									</a>
 									<a href={item.git} target="_blank" rel="noopener noreferrer"><GitHub className={"icon"}/></a>
 								</div>
 							</div>))}

@@ -3,6 +3,12 @@
 
 html {
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 * {

@@ -6,7 +6,7 @@ import {ThemeContext} from "../../context";
 const Home = () => {
 	const {isDark} = useContext(ThemeContext);
 	return (
-		<div className={`home-container ${isDark && "dark"}`}>
+		<div className={`home-container ${isDark && "dark"}`} id={"home"}>
 			<div className={"wrapper"}>
 				<p>Hi, my name is</p>
 				<h1 className="glitch" data-text="Daniel Oliveira">Daniel Oliveira</h1>
